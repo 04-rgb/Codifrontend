@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha loja</title>
+
+    <!--Vinculação do CSS externo-->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-    <header>
+    <header class="header" id="home">
         <h1>LS Secrets</h1>
         <nav class="nav-menu"> 
             <ul>
              <li><a href="#home">Home</a></li>
            <li><a href="#produtos">Produtos<a></li>
+            <li><a href="#sobre">Sobre</a></li>
            <li><a href="#contato">Contato</a></li>
            </ul>
         </nav>
     </header>
 
     <main> 
+        <section class="banner" arial label="Destaque principal">
+           <h2>Promoções Imperdíveis</h2>
+           <p>Os melhores produtos com os melhores preços.</p>
+        </section>
+    
+
         <section id="produtos">
-            <section><h3>Categorias</h3>
+            <h2>Produtos</h2>
+            <section id="categorias">
+                <h3>Categorias</h3>
             <ul>
               <li>Blusas</li>
               <li>Casacos</li>
@@ -30,14 +42,79 @@
 
             </section>
             <h2>Produtos em Destaque</h2>
-            <article>
-                <h3>Vestido Lola</h3>
-                <p>Seda francesa Lancomé</p>
-            </article>
-            <article>
+             <h3>Vestido Lola</h3>
+                <p>Tricô belga</p>
+            <article class="product-card">
+                <figure>
+                <img
+                src="https://i.pinimg.com/originals/28/58/21/2858212b50d032585c7d1ab8bc06f655.jpg"
+                alt="Vestido longo de tricô belga"
+                width="300"
+                height="300"
+                loading="lazy"
+                class="product-image"
+                >
+                <figcaption>Vestido longo de tricô belga</figcaption>
+                </figure>
+                <h3>Vestido longo de tricô belga</h3>
+                <p class="price">R$ 190,00</p>
+                <button>Adicionar ao carrinho</button>
+                </article>
+
+              <article>
               <h3>Calça Daphne </h3> 
               <p>Jeans costura baixa</p>
-            </article>
+            <article class="product-card">
+                 <figure>
+                <img
+                src="https://ph-cdn3.ecosweb.com.br/imagens01/foto/mkp202/moda-feminina/calcas/calca-jeans-feminina-wide-cargo-relaxed-cintura-baixa_2347082_600_1.jpg"
+                alt="Calça Daphne jeans,costura baixa "
+                width="300"
+                height="300"
+                loading="lazy"
+                class="product-image"
+                >
+                <figcaption>Calça dapne jeans,costura baixa </figcaption>
+                </figure>
+                <h3>Calça Daphne jeans, costura baixa</h3>
+                <p class="price">R$ 110,00</p>
+                <button>Adicionar ao carrinho</button>
+                </article>
+            </section>
+              
+            <section id="sobre" class="about">
+           <section class="promo-video">
+               <h2>Vídeo Promocional</h2>
+               <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Z-CsczsHuFk?si=cAgG2V1HcAfBlSRa" 
+                title="Vídeo promocional da loja"
+                allowfullscreen
+                >
+                </iframe>
+                </section>
+
+                <section class="store-location">
+                <h2>Onde Estamos</h2>
+                <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1545.1792830909405!2d-43.19758239676771!3d-22.910552910849777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f0c4e687185%3A0x973c7a140b9b61fa!2sEdif%C3%ADcio%20Eco%20Sapuca%C3%AD!5e0!3m2!1spt-BR!2sbr!4v1785180292280!5m2!1spt-BR!2sbr"
+                     width="600"
+                     height="450"
+                     style="border:0;"
+                     loading="lazy"
+                    title="Localização da loja"
+                    allowfullscreen
+                    >
+                    </iframe>
+
+                    </section>
+                    <h2>Sobre a loja</h2>
+                    <p>Somos uma loja dedicada a oferecer produtod de qualidade com os melhores preços.</p>
+
+                    </section>
+
+                  
         </section id="listadeprodutos">
         <h3>Lista de Produtos</h3>
         <table border="1">
@@ -66,9 +143,63 @@
                 </tr>
             </tbody>
         </table>
-        <section>
+        <section id="contato">
+    <h2>Cadastro/Contato</h2>
+    <form class="form-contact" id="form-contact" action="/enviar" method="POST">
+
+    <fieldset>
+         <legend>Dados do Usuário</legend>
+         <label for="nome">Nome:</label>
+         <input type="text" id="nome" name="nome" required placeholder="Digite seu nome..."minlength="3">
+
+         <label for="email">E-mail:</label>
+         <input type="email" id="email" nome="email" required placeholder="exemplo@email.com">
+
+         <label for="senha">Senha:</label>
+         <input type="password" id="senha" nome="senha" required minlength="8">
+
+          <label for="idade">Idade:</label>
+         <input type="number" id="idade" nome="idade" required minlength min="18">
+    
+    </fieldset>
+        
+    <fieldset>
+        <legend>Preferências</legend>
+
+       <label for="categoria">Categoria de interesse:</label>
+      <select id="categoria" name="categoria">
+        <option value="">selected disabled>Selecione...</option>
+        <option value="casacos">casacos</option>
+        <option value="table">Tenis</option>
+        <option value="acessórios">Acessorios</option>
+      </select>
+
+      <p>Tipo de cliente:</p>
+      <label>
+        <input type="radio" name="tipo" value="pf" required> Pessoa Física
+      </label>
+      <label>
+        <input type="radio" name="tipo" value="pj"> Pessoa Jurídica
+      </label>
+
+      <p>Preferencias</p>
+      <label>
+        <input type="checkbox" name="promo">Receber promoções
+    </label>
+      <label>
+        <input type="checkbox" name="novidades"> Receber novidades
+      </label>
+      </fieldset>
+     
+       <label for="mensagem">Mensagem:</label>
+       <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+       <button type="submit">Enviar</button>
+
+   </form>
+   </section>
     </main>
-    <footer id="contato">
+
+    <footer class="footer">
     Tel.:(11)98596-1054<br>
     Rua Clóvis Neto 200<br>
     &copy; 2026 Todos os direitos reservados.
