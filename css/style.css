@@ -19,11 +19,13 @@ background-color: #696969;
 color: #f4f4f4;
 padding: 20px;
 text-align: center;
+position: fixed;
+margin-top: 20px;
 }
 
 /* Banner */
 .banner{
-    background-color:#b0c4de;
+    background-color:#888c91;
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
@@ -37,10 +39,19 @@ text-align: center;
     /* Cards de produto */
     .product-card{
         background-color:#ddd ;
-        border: 1px solid #ddd;
+        border: 1px solid #6f1cc1;
         padding: 15px;
         margin-bottom: 15px;
         border-radius: 5px;
+
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .product-card:hover{
+        transform: scale(1.02);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        border-color: #6b0795;
     }
 
     /* Títulos */
@@ -55,4 +66,31 @@ text-align: center;
         text-align: center;
         padding: 15px;
         margin-top: 20px;
+    }
+    
+    nav ul li{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+    body{
+        padding-top: 80px;
+    }
+
+    .nav-menu ul{
+        list-style: none;
+        margin-top: 10px;
+    }
+    .nav-menu a:hover{
+        text-decoration: underline;
+    }
+    .badge{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgb(8, 8, 8);
+        color: rgb(240, 243, 243);
+        padding: 5px 8px;
+        border-radius: 5px;
+        font-size: 12px;
     }
