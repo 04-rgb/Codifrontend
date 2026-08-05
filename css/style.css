@@ -1,3 +1,16 @@
+
+:root{
+   
+ --primary-color:#f4f4f4:
+ --secundary-color: #e3f2fd;
+ --dark-color: #222;
+ --text-color: #333;
+ --bg-color: #f4f4f4;
+
+ --spacing: 15px;
+ --radius: 8px;
+}
+
 /* Reset */
 *{
     margin: 0;
@@ -8,49 +21,58 @@
 /* Corpo da pasta */
 body{
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color:var(--bg-color); 
+    color:var(--text-color);
+    
 }
 
 /* Cabeçalho */
 
 .header{
-background-color: #696969;
-color: #f4f4f4;
-padding: 20px;
+background-color: #720599;
+color: #f8f3f3;
+padding: 15px;
 text-align: center;
 position: fixed;
-margin-top: 20px;
+width: 100%;
+top: 0;
+z-index: 1000;
 }
+
 
 /* Banner */
 .banner{
-    background-color:#888c91;
+    background-color:var(--secundary-color);
     padding: 20px;
     margin: 20px;
-    border-radius: 8px;
+    border-radius:var(--radius);
+    text-align: center;
+
+    animation: fadeIn 1s ease-in;
+
 }
 
 /* Sessão de produtos */
 .products{
-    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+    padding: 20px;
+  
     }
 
     /* Cards de produto */
     .product-card{
-        background-color:#ddd ;
-        border: 1px solid #6f1cc1;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-
         position: relative;
-        transition: 0.3s;
+        background-color:#cfb4f8 ;
+        border: 1px solid #0e0e0e;
+        padding: var(--spacing);
+        border-radius: var(--radius);
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .product-card:hover{
         transform: scale(1.02);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         border-color: #6b0795;
     }
 
@@ -65,25 +87,39 @@ margin-top: 20px;
         color: white;
         text-align: center;
         padding: 15px;
-        margin-top: 20px;
+        margin-top: 10px;
+    }
+
+    /* Meno horizontal */
+    .nav-menu ul{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-top: 10px;
     }
     
-    nav ul li{
+   .nav-menu ul li{
         display: inline-block;
-        margin-right: 10px;
+        margin: 0 10px;
+    }
+
+    .nav-menu a{
+        color: #f4f4f4;
+        text-decoration: none;
     }
     
     body{
         padding-top: 80px;
     }
 
-    .nav-menu ul{
-        list-style: none;
-        margin-top: 10px;
-    }
+
     .nav-menu a:hover{
         text-decoration: underline;
     }
+
+    main{
+    margin-top: 100px;
+}
     .badge{
         position: absolute;
         top: 10px;
@@ -94,3 +130,69 @@ margin-top: 20px;
         border-radius: 5px;
         font-size: 12px;
     }
+
+    .promo-video{
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+        padding: 10px;
+    }
+
+    .store-location{
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+        padding: 10px;
+    }
+    .promo-video iframe,
+    .store-location iframe{
+        width: 100%;
+        height: 300px;
+        border: 0;
+    }
+
+ /* Tablet  */
+ @media (min-width: 768px) {
+
+.products {
+grid-template-columns: repeat( 1fr 1fr);
+ }
+}
+
+ /* Desktop */
+ @media (min-width: 1024px) {
+
+.products {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ }
+
+.footer {
+ background-color: var(--dark-color);
+color: white;
+ text-align: center;
+ padding: var(--spacing);
+ }
+
+ @keyframes fadeIn {
+from {
+ opacity: 0;
+transform: translateY(10px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+
+
+ .about {
+ padding: 20px;
+ margin: 10px;
+}
+ /* container só para video + localização */
+ .about-content {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ }
